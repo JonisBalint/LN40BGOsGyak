@@ -15,13 +15,11 @@ int main()
 	if(pid == 0){
 		printf("Gyerek vagyok, pidem:%d, szulom pidje:%d\n", getpid(), getppid());
 		ret = execl(getenv("PATH"), getenv("RUNNABLE_PROG"), NULL);
-		printf("\n");
-	}
-	else{
-		printf("Szulo vagyok, pidem:%d, gyerek pidje:%d\n", getpid(), pid);
 	}
 
 	wait(NULL);
+		
+	printf("Szulo vagyok, pidem:%d, gyerek pidje:%d\n", getpid(), pid);
 
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
